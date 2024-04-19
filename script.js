@@ -173,28 +173,28 @@ console.log(row2D); // 2D array holding each row of data as separate objects
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Part 3: Transforming Data
 
-obj1 = { // Object for row2
+let obj1 = { // Object for row2
     id: "42",
     name: "Bruce",
     occupation: "Knight",
     age: "41"
 };
 
-obj2 = { // Object for row3
+let obj2 = { // Object for row3
     id: "57",
     name: "Bob",
     occupation: "Fry Cook",
     age: "19"
 };
 
-obj3 = { // Object for row4
+let obj3 = { // Object for row4
     id: "63",
     name: "Blaine",
     occupation: "Quiz Master",
     age: "58"
 };
 
-obj4 = { // Object for row5
+let obj4 = { // Object for row5
     id: "98",
     name: "Bill",
     occupation: "Doctor's Assistant",
@@ -204,3 +204,33 @@ obj4 = { // Object for row5
 row2D = [obj1, obj2, obj3, obj4]; // Update row2D to hold objects
 console.log(row2D);
 
+///////////////////////////////////////////////////////////////////////////////////////////
+// Part 4: Sorting and Manipulating Data
+
+// 1. Remove the last element from the sorted array
+console.log(`Removed element: `);
+console.log(row2D.pop()) // Removes obj4
+console.log(`Updated Array of Objects: `);
+console.log(row2D);
+
+// 2. Insert the following object at index 1: { id: "48", name: "Barry", occupation: "Runner", age: "25" }
+let newObj1 = { 
+    id: "48",
+    name: "Barry",
+    occupation: "Runner",
+    age: "25"
+}
+
+row2D.splice(1, 0, newObj1); // puts newObj1 at position 1
+console.log(row2D);
+
+// 3. Add the following object to the end of the array: { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+let newObj2 = {
+    id: "7", 
+    name: "Bilbo", 
+    occupation: "None", 
+    age: "111"
+}
+
+row2D.push(newObj2); // pushes newObj2 to the end of row2D
+console.log(row2D);
