@@ -17,14 +17,14 @@ let place = 0;
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Cell 1
 
-for (let i = 0; i <= csv.length; i++){
+for (let i = 0; i <= csv.length; i++) {
     // if (csv[i] === ","){
     //     continue;
     // }
-    
+
     cell1.push(csv[i]);
 
-    if (csv[i] === "\n"){
+    if (csv[i] === "\n") {
         place = i;
         break;
     }
@@ -38,9 +38,9 @@ console.log(cell1);
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Cell 2
 
-for (let i = place + 1; i <= csv.length; i++){
+for (let i = place + 1; i <= csv.length; i++) {
     cell2.push(csv[i]);
-    if (csv[i] === "\n"){
+    if (csv[i] === "\n") {
         place = i;
         break;
     }
@@ -53,9 +53,9 @@ console.log(cell2);
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Cell 3
 
-for (let i = place + 1; i <= csv.length; i++){
+for (let i = place + 1; i <= csv.length; i++) {
     cell3.push(csv[i]);
-    if (csv[i] === "\n"){
+    if (csv[i] === "\n") {
         place = i;
         break;
     }
@@ -68,9 +68,9 @@ console.log(cell3);
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Cell 4
 
-for (let i = place + 1; i <= csv.length; i++){
+for (let i = place + 1; i <= csv.length; i++) {
     cell4.push(csv[i]);
-    if (csv[i] === "\n"){
+    if (csv[i] === "\n") {
         place = i;
         break;
     }
@@ -83,9 +83,9 @@ console.log(cell4);
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Cell 5
 
-for (let i = place + 1; i <= csv.length; i++){
+for (let i = place + 1; i <= csv.length; i++) {
     cell5.push(csv[i]);
-    if (csv[i] === "\n"){
+    if (csv[i] === "\n") {
         place = i;
         break;
     }
@@ -125,19 +125,17 @@ let row3 = [];
 let row4 = [];
 let row5 = [];
 
-
-
-for(let i = 0; i < csv2.length; i++){
+for (let i = 0; i < csv2.length; i++) {
     let data = ""; // String for each row's data
 
-    if(csv2[i] === "\n"){ // If car is '\n' iterate row and continue
+    if (csv2[i] === "\n") { // If car is '\n' iterate row and continue
         row++;
         continue;
     }
 
     data += csv2[i]; // Updating data with per char in csv2
 
-    switch(row){ // Populate data into each row
+    switch (row) { // Populate data into each row
         case 1:
             row1 += data;
             break;
@@ -170,4 +168,39 @@ console.log(row5)
 
 let row2D = [row1, row2, row3, row4, row5];
 
+console.log(row2D); // 2D array holding each row of data as separate objects
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Part 3: Transforming Data
+
+obj1 = { // Object for row2
+    id: "42",
+    name: "Bruce",
+    occupation: "Knight",
+    age: "41"
+};
+
+obj2 = { // Object for row3
+    id: "57",
+    name: "Bob",
+    occupation: "Fry Cook",
+    age: "19"
+};
+
+obj3 = { // Object for row4
+    id: "63",
+    name: "Blaine",
+    occupation: "Quiz Master",
+    age: "58"
+};
+
+obj4 = { // Object for row5
+    id: "98",
+    name: "Bill",
+    occupation: "Doctor's Assistant",
+    age: "26"
+};
+
+row2D = [obj1, obj2, obj3, obj4]; // Update row2D to hold objects
 console.log(row2D);
+
