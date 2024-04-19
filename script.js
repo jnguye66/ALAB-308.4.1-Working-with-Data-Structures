@@ -222,6 +222,7 @@ let newObj1 = {
 }
 
 row2D.splice(1, 0, newObj1); // puts newObj1 at position 1
+console.log(`Inserted newObj1 at index 1: `);
 console.log(row2D);
 
 // 3. Add the following object to the end of the array: { id: "7", name: "Bilbo", occupation: "None", age: "111" }
@@ -233,4 +234,25 @@ let newObj2 = {
 }
 
 row2D.push(newObj2); // pushes newObj2 to the end of row2D
+console.log(`Pushed newObj2 to end of row2D: `);
 console.log(row2D);
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Part 5: Full Circle
+
+let csvFinal = []; // Final CSV Array
+let strCSVFinal = ""; // Final CSV String
+
+for (let i = 0; i < row2D.length; i++){ 
+    csvFinal.push(Object.values(row2D[i])); // Converts each object from row2D into an array of it's values, then pushes each array into csvFinal
+    csvFinal[i] = csvFinal[i].toString(); // Turns the array of arrays into an array of strings
+    strCSVFinal += csvFinal[i] + "\n";
+}
+console.log(`Updated CSV from Objects to Arrays: `);
+console.log(csvFinal);
+
+console.log(`Updated CSV from array of Arrays to array to Strings: `)
+console.log(csvFinal);
+
+console.log(`Convert CSV array to string: `)
+console.log(strCSVFinal);
